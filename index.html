@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Click Counter</title>
+    <style>
+        
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            font-family: sans-serif;
+        }
+
+        
+        #counter {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        
+        #circle {
+            width: 150px;
+            height: 150px;
+            background-color: #ff4757;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: transform 0.1s; 
+            user-select: none;
+        }
+
+        
+        #circle:active {
+            transform: scale(0.9);
+        }
+    </style>
+</head>
+<body>
+
+    <div id="counter">Счёт: 0</div>
+    <div id="circle"></div>
+
+    <script>
+        
+        const circle = document.getElementById('circle');
+        const counterElement = document.getElementById('counter');
+        
+        let count = 0;
+
+        
+        circle.addEventListener('click', () => {
+            count++; 
+            counterElement.innerText = `Счёт: ${count}`; 
+        });
+    </script>
+
+</body>
+</html>
