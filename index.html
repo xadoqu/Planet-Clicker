@@ -1,64 +1,52 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Click Counter</title>
-    <style>
-        
-        body {
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f4f4f4;
-            font-family: sans-serif;
-        }
-
-        
-        #counter {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            font-size: 24px;
-            font-weight: bold;
-        }
-
-        
-        #circle {
-            width: 150px;
-            height: 150px;
-            background-color: #ff4757;
-            border-radius: 50%;
-            cursor: pointer;
-            transition: transform 0.1s; 
-            user-select: none;
-        }
-
-        
-        #circle:active {
-            transform: scale(0.9);
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planet Evolution | Core Edition</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="stars"></div>
+    <div id="dev-mode-status" class="dev-status">DEV MODE: ACTIVE (+500/click)</div>
 
-    <div id="counter">Счёт: 0</div>
-    <div id="circle"></div>
+    <div class="game-container">
+        <aside class="side-panel left">
+            <div class="stat-box">
+                <h2 id="resource-name">Planet resources</h2>
+                <p id="resource-display">0 💧</p>
+                <small>Income: <span id="pps-display">0</span>/s</small>
+            </div>
+            
+            <div class="stat-box">
+                <h3>Epoch: <span id="epoch-display">1</span></h3>
+                <p id="epoch-name" style="font-size: 0.9rem; color: #aaa;">Barren Rock</p>
+                <div class="progress-bar-container">
+                    <div id="progress-bar-fill" class="progress-bar-fill"></div>
+                </div>
+                <p id="next-stage-info" style="font-size: 0.75rem; margin-top: 5px;"></p>
+            </div>
 
-    <script>
-        
-        const circle = document.getElementById('circle');
-        const counterElement = document.getElementById('counter');
-        
-        let count = 0;
+            <button id="reset-btn" class="danger-btn">Reset Progress</button>
+        </aside>
 
-        
-        circle.addEventListener('click', () => {
-            count++; 
-            counterElement.innerText = `Счёт: ${count}`; 
-        });
-    </script>
+        <main class="main-display">
+            <div id="evolution-container">
+                <button id="evolve-btn" class="evolve-btn">EVOLVE PLANET</button>
+            </div>
+            <div id="planet-click-zone">
+                <div id="planet" class="planet level-1">
+                    <div class="land-mass"></div>
+                </div>
+            </div>
+        </main>
 
+        <aside class="side-panel right">
+            <h3>Infrastructure</h3>
+            <div id="buildings-list"></div>
+        </aside>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
