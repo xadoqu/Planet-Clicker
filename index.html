@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Planet Evolution | Core Edition</title>
+    <title>Planet Evolution</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,7 +13,7 @@
     <div class="game-container">
         <aside class="side-panel left">
             <div class="stat-box">
-                <h2 id="resource-name">Planet resources</h2>
+                <h2 id="resource-name">Planet Resources</h2>
                 <p id="resource-display">0 💧</p>
                 <small>Income: <span id="pps-display">0</span>/s</small>
             </div>
@@ -27,6 +27,11 @@
                 <p id="next-stage-info" style="font-size: 0.75rem; margin-top: 5px;"></p>
             </div>
 
+            <div class="stat-box event-log">
+                <h4>System Log:</h4>
+                <div id="event-display">Waiting for events...</div>
+            </div>
+
             <button id="reset-btn" class="danger-btn">Reset Progress</button>
         </aside>
 
@@ -37,7 +42,7 @@
             <div id="planet-click-zone">
                 <div id="planet" class="planet level-1">
                     <div class="land-mass"></div>
-                </div>
+                    <div class="life-forms"></div> </div>
             </div>
         </main>
 
@@ -46,7 +51,6 @@
             <div id="buildings-list"></div>
         </aside>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>
